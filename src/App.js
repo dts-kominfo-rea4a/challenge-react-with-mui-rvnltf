@@ -3,7 +3,7 @@ import "./App.css";
 // Uncomment untuk memuat daftar kontak
 import contactsJSON from "./data/contacts.json";
 import Headers from "./components/Header";
-import Contact from "./components/Contact";
+import ListItem from "./components/ListItem";
 import ContactForm from "./components/ContactForm";
 import { Grid } from "@mui/material";
 import { useState } from "react";
@@ -27,6 +27,7 @@ const App = () => {
     setContacts([...contacts, objContact]);
   };
 
+  console.log(contacts[0]);
   return (
     <div className="App">
       <Headers />
@@ -38,7 +39,7 @@ const App = () => {
           <ContactForm fnAddContact={addContact} />
         </Grid>
         <Grid xs={5} item sx={{ margin: "auto" }}>
-          <Contact data={contacts} />
+          <ListItem data={contacts} />
         </Grid>
       </Grid>
     </div>
